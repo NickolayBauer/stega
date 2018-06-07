@@ -1,15 +1,13 @@
-from PIL import Image, ImageDraw 
-from random import randint		
+from PIL import Image 		
 from re import findall
 
 def stega_decrypt():
+	
 	a = []						    
 	keys = []
-	img = Image.open("image.png")				
+	img = Image.open(input("path to image: "))				
 	pix = img.load()
-	
 	f = open(input('path to keys: '),'r')
-	
 	y = str([line.strip() for line in f])				
 															
 	for i in range(len(findall(r'\((\d+)\,',y))):
